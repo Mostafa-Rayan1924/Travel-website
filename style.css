@@ -1,0 +1,452 @@
+:root {
+  --main-color: rgb(240, 185, 3);
+  --bg: #333;
+  --black: black;
+  --white: #fff;
+}
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none !important;
+  border: none;
+  outline: none;
+  list-style: none;
+  transition: 0.3s;
+}
+.header .container .bars {
+  display: none;
+}
+.header {
+  background: var(--bg);
+}
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+.header .container .logo {
+  color: var(--white);
+  font-size: 30px;
+}
+.header .container .logo span {
+  color: var(--main-color);
+}
+.header .container .links {
+  margin: 0;
+  display: flex;
+  color: var(--white);
+}
+.header .container .links li {
+  padding: 0 10px;
+  cursor: pointer;
+}
+.header .container .icons {
+  color: var(--white);
+  font-size: 20px;
+}
+.header .container .icons i {
+  margin-right: 10px;
+  cursor: pointer;
+}
+.header .container .links a {
+  color: var(--white);
+}
+.header .container .links a:hover,
+.header .container .icons span:hover {
+  color: var(--main-color);
+}
+.search {
+  display: none;
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+  background-color: var(--bg);
+  position: relative;
+  z-index: 111111;
+}
+.active {
+  display: block;
+}
+.search form {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.search form input {
+  background-color: #ececec;
+  width: 100%;
+  margin-right: 10px;
+}
+.search i {
+  cursor: pointer;
+  color: var(--white);
+  font-size: 20px;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  min-height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+.overlay span {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 150px;
+  background-color: var(--white);
+  color: var(--main-color);
+  text-align: center;
+  line-height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  z-index: 11111;
+}
+
+.overlay .signing {
+  transform: translateY(200px);
+  padding: 20px;
+  position: relative;
+  background-color: var(--white);
+  width: 400px;
+  margin: 0 auto;
+}
+
+.signing h3 {
+  font-size: 25px;
+}
+
+.signing input:focus {
+  border-color: var(--main-color) !important;
+}
+.block {
+  display: block;
+}
+.landing {
+  margin-top: 150px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  position: relative;
+  z-index: 0;
+  text-transform: uppercase;
+}
+.video video {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: -1;
+  object-fit: cover;
+}
+.landing h2 {
+  color: var(--white);
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+.button {
+  background-color: var(--main-color);
+  color: var(--white);
+  padding: 6px 20px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+.button:hover {
+  border: 1px solid var(--main-color);
+  background-color: rgba(238, 158, 10, 0.2);
+  color: var(--main-color);
+}
+.landing .controls {
+  width: fit-content;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: var(--black) !important;
+  margin-top: 30px;
+}
+.landing .controls span {
+  background-color: var(--white);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+.landing .controls .active {
+  background-color: var(--main-color);
+}
+@media (max-width: 767px) {
+  body {
+    overflow-x: hidden;
+  }
+  .header .container {
+    position: relative;
+  }
+  .header .container .bars {
+    display: block !important;
+    color: var(--white);
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .header .container .links {
+    padding: 20px;
+    z-index: 22000;
+    position: absolute;
+    top: 99%;
+    width: 100%;
+    left: 0;
+    background-color: var(--bg);
+    color: var(--white);
+    display: none !important;
+  }
+  .header .container .links li {
+    padding: 8px;
+    background-color: #111;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 6px;
+  }
+  .header .container .links.block {
+    display: block !important;
+  }
+}
+.main-title {
+  text-align: center;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+}
+.main-title span {
+  background: rgba(238, 158, 10, 0.2);
+  padding: 0.2rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 3.5rem;
+  color: var(--main-color);
+}
+@media (max-width: 767px) {
+  .main-title span {
+    padding: 0.2rem 0.5rem;
+    font-size: 1.5rem;
+  }
+}
+
+.booking .container .content {
+  border-radius: 6px;
+  background-color: var(--white);
+  box-shadow: 0 0 10px #ddd;
+  padding: 20px;
+}
+.booking .container h5 {
+  text-transform: capitalize;
+  color: var(--bg);
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.booking .container .content input {
+  caret-color: var(--main-color);
+  width: 100%;
+  height: 40px;
+  border-radius: 6px;
+  padding: 0 10px;
+}
+.button {
+  color: var(--white);
+  margin: 15px 0 5px;
+  border-radius: 6px;
+  background-color: var(--main-color);
+  padding: 7px 20px;
+}
+section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.Packages .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+.Packages .box {
+  overflow: hidden;
+  border-radius: 6px;
+  box-shadow: 0 0 10px #ddd;
+}
+.Packages .box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 10px rgb(209, 209, 209);
+}
+.Packages .box span {
+  text-transform: capitalize;
+}
+.Packages .box .content {
+  padding: 10px;
+}
+.Packages img {
+  max-width: 100%;
+}
+.Packages .box i {
+  color: var(--main-color);
+}
+.Packages .box .icon span {
+  margin-left: 5px;
+}
+.Packages .no {
+  text-decoration: line-through !important ;
+}
+.Services .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+.Services .box {
+  padding: 10px 0;
+  text-align: center;
+}
+.Services .box:hover {
+  box-shadow: 0 0 10px #ddd;
+}
+.Services i {
+  font-size: 40px;
+  margin-bottom: 5px;
+  color: var(--main-color);
+}
+.Gallery .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+.Gallery .container .box {
+  overflow: hidden;
+}
+.Gallery .container .box:hover .image::before {
+  top: 0;
+}
+.Gallery .container .box:hover .content {
+  opacity: 1;
+}
+.Gallery .container img {
+  max-width: 100%;
+}
+.Gallery .container .image {
+  position: relative;
+}
+.Gallery .container .content {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.Gallery .container .image::before {
+  position: absolute;
+  content: "";
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--black);
+  opacity: 0.6;
+  transition: 0.3s;
+}
+.Gallery .container .box h6 {
+  color: var(--main-color);
+  text-transform: capitalize;
+  font-size: 20px;
+}
+.Gallery .container .box p {
+  color: var(--white);
+}
+.Gallery .container .content {
+  opacity: 0;
+}
+.Review .container {
+  padding-bottom: 2rem;
+}
+.Review .container .box {
+  padding: 10px 0;
+}
+.Review i {
+  color: var(--main-color);
+}
+.Contact form {
+  padding: 20px;
+  background-color: var(--white);
+}
+.Contact .inputs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.Contact input {
+  width: 48%;
+  margin-bottom: 10px;
+  height: 40px;
+  padding: 10px;
+  border-radius: 3px;
+  background-color: rgb(243, 243, 243);
+}
+.Contact textarea {
+  padding: 10px;
+  width: 100%;
+  height: 150px;
+  background-color: rgb(243, 243, 243);
+  resize: none;
+}
+.banner {
+  padding: 0;
+}
+.banner .container {
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 40px;
+}
+footer {
+  margin-top: 30px;
+  padding: 30px 0;
+  background-color: var(--bg);
+}
+footer .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+footer .container li {
+  padding: 7px 0;
+}
+footer .container li:hover {
+  cursor: pointer;
+  color: var(--main-color);
+}
+footer .name {
+  border-top: 2px solid rgba(255, 255, 255, 0.2);
+  padding-top: 40px;
+  text-align: center;
+  color: var(--white);
+  margin-bottom: 0;
+}
+footer p span {
+  color: var(--main-color);
+}
+@media (max-width: 767px) {
+  footer {
+    text-align: center;
+  }
+  footer ul li {
+    transform: translateX(-20px);
+  }
+}
